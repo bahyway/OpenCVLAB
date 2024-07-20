@@ -1,0 +1,11 @@
+opencv-python-headless
+numpy
+scipy
+matplotlib
+pillow
+scikit-learn
+jupyter
+tensorflow
+keras
+torch
+torchvision
