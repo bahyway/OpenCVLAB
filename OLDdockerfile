@@ -1,0 +1,155 @@
+# Use a more comprehensive Python image
+FROM python:3.9
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libssl-dev \
+    libffi-dev \
+    libbz2-dev \
+    libreadline-dev \
+    libsqlite3-dev \
+    wget \
+    curl \
+    llvm \
+    libncurses5-dev \
+    libncursesw5-dev \
+    xz-utils \
+    tk-dev \
+    liblzma-dev \
+    libxml2-dev \
+    libxmlsec1-dev \
+    libffi-dev \
+    libxslt1-dev \
+    zlib1g-dev
+
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Print the contents of requirements.txt to debug
+RUN cat requirements.txt
+
+# Upgrade pip and install dependencies with verbose logging
+RUN pip install --upgrade pip
+
+# Install dependencies one by one with verbose logging to isolate issues
+RUN pip install -v absl-py==0.4.1
+RUN pip install -v appdirs==1.4.3
+RUN pip install -v asn1crypto==0.24.0
+RUN pip install -v astor==0.7.1
+RUN pip install -v attrs==18.2.0
+RUN pip install -v automat==0.7.0
+RUN pip install -v backcall==0.1.0
+RUN pip install -v bleach==2.1.4
+RUN pip install -v certifi==2018.10.15
+RUN pip install -v cffi==1.11.5
+RUN pip install -v colorama==0.3.9
+RUN pip install -v constantly==15.1.0
+RUN pip install -v cryptography==2.3.1
+RUN pip install -v cycler==0.10.0
+RUN pip install -v decorator==4.3.0
+RUN pip install -v entrypoints==0.2.3
+RUN pip install -v freetype==2.9.1
+RUN pip install -v gast==0.2.0
+RUN pip install -v grpcio==1.12.1
+RUN pip install -v h5py==2.8.0
+RUN pip install -v html5lib==1.0.1
+RUN pip install -v hyperlink==18.0.0
+RUN pip install -v idna==2.7
+RUN pip install -v incremental==17.5.0
+RUN pip install -v ipykernel==4.9.0
+RUN pip install -v ipython==6.5.0
+RUN pip install -v ipython_genutils==0.2.0
+RUN pip install -v ipywidgets==7.4.1
+RUN pip install -v jedi==0.12.1
+RUN pip install -v jinja2==2.10
+RUN pip install -v jpeg==9b
+RUN pip install -v jsonschema==2.6.0
+RUN pip install -v jupyter==1.0.0
+RUN pip install -v jupyter_client==5.2.3
+RUN pip install -v jupyter_console==5.2.0
+RUN pip install -v jupyter_core==4.4.0
+RUN pip install -v jupyterlab==0.34.9
+RUN pip install -v jupyterlab_launcher==0.13.1
+RUN pip install -v keras==2.2.2
+RUN pip install -v keras-applications==1.0.4
+RUN pip install -v keras-preprocessing==1.0.2
+RUN pip install -v kiwisolver==1.0.1
+RUN pip install -v markdown==2.6.11
+RUN pip install -v markupsafe==1.0
+RUN pip install -v matplotlib==2.2.3
+RUN pip install -v mistune==0.8.3
+RUN pip install -v mkl_fft==1.0.4
+RUN pip install -v mkl_random==1.0.1
+RUN pip install -v nbconvert==5.3.1
+RUN pip install -v nbformat==4.4.0
+RUN pip install -v notebook==5.6.0
+RUN pip install -v numpy==1.15.1
+RUN pip install -v olefile==0.46
+RUN pip install -v opencv-python==3.4.2
+RUN pip install -v pandas==1.1.5
+RUN pip install -v pandoc==2.2.3.2
+RUN pip install -v pandocfilters==1.4.2
+RUN pip install -v parso==0.3.1
+RUN pip install -v pickleshare==0.7.4
+RUN pip install -v pillow==5.2.0
+RUN pip install -v pip==10.0.1
+RUN pip install -v prometheus_client==0.3.1
+RUN pip install -v prompt_toolkit==1.0.15
+RUN pip install -v protobuf==3.6.0
+RUN pip install -v pyasn1==0.4.4
+RUN pip install -v pyasn1-modules==0.2.2
+RUN pip install -v pycparser==2.18
+RUN pip install -v pygments==2.2.0
+RUN pip install -v pyopenssl==18.0.0
+RUN pip install -v pyparsing==2.2.0
+RUN pip install -v pyqt==5.9.2
+RUN pip install -v python-dateutil==2.7.3
+RUN pip install -v pytz==2018.5
+RUN pip install -v pywin32==223
+RUN pip install -v pyyaml==3.13
+RUN pip install -v pyzmq==17.1.2
+RUN pip install -v qtconsole==4.4.1
+RUN pip install -v scikit-learn==0.19.1
+RUN pip install -v scipy==1.1.0
+RUN pip install -v send2trash==1.5.0
+RUN pip install -v service_identity==17.0.0
+RUN pip install -v setuptools==40.2.0
+RUN pip install -v simplegeneric==0.8.1
+RUN pip install -v sip==4.19.12
+RUN pip install -v six==1.11.0
+RUN pip install -v tensorflow==1.10.0
+RUN pip install -v termcolor==1.1.0
+RUN pip install -v terminado==0.8.1
+RUN pip install -v testpath==0.3.1
+RUN pip install -v tk==8.6.8
+RUN pip install -v tornado==5.1
+RUN pip install -v traitlets==4.3.2
+RUN pip install -v twisted==18.7.0
+RUN pip install -v wcwidth==0.1.7
+RUN pip install -v webencodings==0.5.1
+RUN pip install -v werkzeug==0.14.1
+RUN pip install -v wheel==0.31.1
+RUN pip install -v widgetsnbextension==3.4.1
+RUN pip install -v wincertstore==0.2
+RUN pip install -v yaml==0.1.7
+RUN pip install -v zeromq==4.2.5
+RUN pip install -v zope.interface==4.5.0
+RUN pip install -v torch
+RUN pip install -v torchvision
+RUN pip install -v jupyter
+
+# Copy the rest of the working directory contents into the container
+COPY . .
+
+# Expose the port for Jupyter Notebook
+EXPOSE 8888
+
+# Command to run Jupyter Notebook
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root"]
