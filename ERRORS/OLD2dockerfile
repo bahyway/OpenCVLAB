@@ -1,0 +1,35 @@
+# Use Miniconda image
+FROM continuumio/miniconda3
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the environment.yml file into the container
+COPY environment.yml .
+
+# Print conda info for debugging
+RUN conda info
+RUN conda config --show-sources
+RUN conda list --show-channel-urls
+
+# Update conda
+RUN conda update -n base -c defaults conda --yes
+
+# Create the environment with verbose output
+RUN conda env create -f environment.yml --verbose
+
+# Activate the environment and ensure PATH is set correctly
+RUN echo "source activate opencvlab" > ~/.bashrc
+ENV PATH /opt/conda/envs/opencvlab/bin:$PATH
+
+# Copy the rest of the working directory contents into the container
+COPY . .
+
+# Expose the port for Jupyter Notebook
+EXPOSE 8888
+
+# Command to run Jupyter Notebook
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root"]

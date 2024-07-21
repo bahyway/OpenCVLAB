@@ -1,0 +1,59 @@
+# Use Miniconda image
+FROM continuumio/miniconda3
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the environment.yml file into the container
+COPY environment.yml .
+
+# Print conda info for debugging
+RUN conda info
+RUN conda config --show-sources
+RUN conda list --show-channel-urls
+
+# Update conda
+RUN conda update -n base -c defaults conda --yes
+
+# Separate environment creation into individual steps
+RUN conda create -n opencvlab python=3.9 --yes
+RUN conda install -n opencvlab numpy --yes
+RUN conda install -n opencvlab matplotlib --yes
+RUN conda install -n opencvlab pip --yes
+
+# Activate the environment and ensure PATH is set correctly
+RUN echo "source activate opencvlab" > ~/.bashrc
+ENV PATH /opt/conda/envs/opencvlab/bin:$PATH
+
+# Copy the rest of the working directory contents into the container
+COPY . .
+
+# Install remaining dependencies via pip
+RUN pip install jupyter
+RUN pip install tensorflow==1.10.0
+RUN pip install keras==2.2.2
+RUN pip install torch
+RUN pip install torchvision
+RUN pip install scipy==1.1.0
+RUN pip install pillow==5.2.0
+RUN pip install scikit-learn==0.19.1
+RUN pip install h5py==2.8.0
+RUN pip install grpcio==1.12.1
+RUN pip install ipython==6.5.0
+RUN pip install jupyterlab==0.34.9
+RUN pip install markdown==2.6.11
+RUN pip install protobuf==3.6.0
+RUN pip install pygments==2.2.0
+RUN pip install werkzeug==0.14.1
+RUN pip install wheel==0.31.1
+RUN pip install pyyaml==3.13
+RUN pip install pyzmq==17.1.2
+
+# Expose the port for Jupyter Notebook
+EXPOSE 8888
+
+# Command to run Jupyter Notebook
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root"]

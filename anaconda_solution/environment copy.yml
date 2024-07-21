@@ -1,0 +1,28 @@
+name: opencvlab
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - numpy
+  - matplotlib
+  - scipy==1.1.0
+  - pillow==5.2.0
+  - scikit-learn==0.19.1
+  - pip
+  - pip:
+      - jupyter
+      - tensorflow==1.10.0
+      - keras==2.2.2
+      - torch
+      - torchvision
+      - h5py==2.8.0
+      - grpcio==1.12.1
+      - ipython==6.5.0
+      - jupyterlab==0.34.9
+      - markdown==2.6.11
+      - protobuf==3.6.0
+      - pygments==2.2.0
+      - werkzeug==0.14.1
+      - wheel==0.31.1
+      - pyyaml==3.13
+      - pyzmq==17.1.2
