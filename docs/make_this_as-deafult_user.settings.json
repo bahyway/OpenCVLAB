@@ -1,0 +1,213 @@
+{
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.associations": {},
+    "files.autoSave": "off",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.history/**": true,
+        "**/History_**": true
+    },
+    "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.confirmOnExit": false,
+    "editor.largeFileOptimizations": false,
+    "editor.suggest.shareSuggestSelections": true,
+    "editor.suggestSelection": "first",
+    "editor.minimap.enabled": false,
+    "editor.foldingStrategy": "indentation",
+    "editor.showFoldingControls": "always",
+    "editor.rulers": [
+        80
+    ],
+    "editor.formatOnSave": true,
+    "sonarlint.rules": {
+        "python:S3776": {
+            "level": "off"
+        }
+    },
+    "python.languageServer": "Default",
+    "python.dataScience.askForKernelRestart": false,
+    "python.dataScience.runStartupCommands": "%load_ext autoreload\\n%autoreload 2",
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "python.dataScience.useNotebookEditor": false,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "gitlens.views.repositories.location": "gitlens",
+    "gitlens.views.repositories.files.layout": "list",
+    "gitlens.views.fileHistory.location": "gitlens",
+    "gitlens.views.lineHistory.enabled": false,
+    "gitlens.views.compare.location": "gitlens",
+    "gitlens.views.search.location": "gitlens",
+    "gitlens.mode.statusBar.enabled": true,
+    "gitlens.mode.statusBar.alignment": "left",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.enabled": false,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "tabnine.experimentalAutoImports": true,
+    "indentRainbow.errorColor": "rgba(255,255,255,0.0)",
+    "todo-tree.tree.flat": true,
+    "todo-tree.highlights.defaultHighlight": {
+        "type": "text-and-comment",
+        "foreground": "grey"
+    },
+    "better-comments.tags": [
+        {
+            "tag": "?",
+            "color": "#8f5785",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "*",
+            "color": "#69a800",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        }
+    ],
+    "bracket-pair-colorizer-2.colors": [
+        "#992e24",
+        "#ffb997",
+        "#263859"
+    ],
+    "cSpell.userWords": [
+        "YYYYMMDD",
+        "groupby",
+        "idxmax",
+        "inplace",
+        "itertools",
+        "multindex",
+        "rfind",
+        "strptime"
+    ],
+    "terminal.integrated.profiles.linux": {
+        "zsh": {
+            "path": "/bin/zsh"
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "_comment1": "(terminal.integrated.defaultProfile.linux)it was before:Git Bash",
+    "mssql.maxRecentConnections": 5,
+    "mssql.connections": [],
+    "mssql.shortcuts": {
+        "event.toggleResultPane": "ctrl+alt+r",
+        "event.toggleMessagePane": "ctrl+alt+y",
+        "event.prevGrid": "ctrl+up",
+        "event.nextGrid": "ctrl+down",
+        "event.copySelection": "ctrl+c",
+        "event.maximizeGrid": "",
+        "event.selectAll": "",
+        "event.saveAsJSON": "",
+        "event.saveAsCSV": "",
+        "event.saveAsExcel": ""
+    },
+    "mssql.messagesDefaultOpen": true,
+    "mssql.logDebugInfo": false,
+    "mssql.saveAsCsv.includeHeaders": true,
+    "mssql.saveAsCsv.delimiter": ",",
+    "mssql.saveAsCsv.lineSeparator": null,
+    "mssql.saveAsCsv.textIdentifier": "\"",
+    "mssql.saveAsCsv.encoding": "utf-8",
+    "mssql.intelliSense.enableIntelliSense": true,
+    "mssql.intelliSense.enableErrorChecking": true,
+    "mssql.intelliSense.enableSuggestions": true,
+    "mssql.intelliSense.enableQuickInfo": true,
+    "mssql.intelliSense.lowerCaseSuggestions": false,
+    "mssql.resultsFontFamily": "-apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,Ubuntu,Droid Sans,sans-serif",
+    "mssql.resultsFontSize": 18,
+    "mssql.copyIncludeHeaders": false,
+    "mssql.copyRemoveNewLine": true,
+    "mssql.splitPaneSelection": "next",
+    "mssql.format.alignColumnDefinitionsInColumns": false,
+    "mssql.format.datatypeCasing": "none",
+    "mssql.format.keywordCasing": "none",
+    "mssql.format.placeCommasBeforeNextStatement": false,
+    "mssql.format.placeSelectStatementReferencesOnNewLine": false,
+    "mssql.applyLocalization": false,
+    "mssql.query.displayBitAsNumber": true,
+    "mssql.persistQueryResultTabs": false,
+    "oracledevtools.bookmarkFileFolder": "C:\\Users\\Bahaa\\Oracle\\oracle.oracledevtools",
+    "oracledevtools.download.otherFolder": "C:\\Users\\Bahaa\\downloads",
+    "oracledevtools.connectionConfiguration.configFilesFolder": "C:\\Users\\Bahaa\\Oracle\\network\\admin",
+    "oracledevtools.connectionConfiguration.walletFileFolder": "C:\\Users\\Bahaa\\Oracle\\network\\admin",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "GitLive.Special branches": "main|master|trunk|dev|develop|qa|test|release[-/].*",
+    "GitLive.Issue tracker integration": "Disabled",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "git.ignoredRepositories": [
+        "c:\\Users\\Bahaa\\.vscode\\extensions\\stepsize.stepsize-1.0.14\\resources\\demo-repository"
+    ],
+    "git.enableSmartCommit": true,
+    "errorLens.excludeBySource": [
+        "Flake8(E225)"
+    ],
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "powershell.promptToUpdatePowerShell": false,
+    "remote.WSL.fileWatcher.polling": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "editor.codeLensFontFamily": "consals",
+    "editor.fontSize": 18,
+    "remote.SSH.remotePlatform": {
+        "192.168.178.74": "linux",
+        "192.168.56.101": "linux",
+        "*.gitpod.io": "linux"
+    },
+    "yaml.schemas": {
+        "file:///c%3A/Users/Bahaa/.vscode/extensions/docsmsft.docs-yaml-1.0.1/dist/toc.schema.json": "/toc\\.yml/i"
+    },
+    "vs-kubernetes": {
+        "vscode-kubernetes.kubectl-path.windows": "C:\\Users\\Bahaa\\.vs-kubernetes\\tools\\kubectl\\kubectl.exe",
+        "vscode-kubernetes.helm-path.windows": "C:\\Users\\Bahaa\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",
+        "vscode-kubernetes.minikube-path.windows": "C:\\Users\\Bahaa\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe",
+        "vscode-kubernetes.minikube-path-windows": "C:\\Users\\Bahaa\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe",
+        "vscode-kubernetes.kubectl-path-windows": "C:\\Users\\Bahaa\\.vs-kubernetes\\tools\\kubectl\\kubectl.exe",
+        "vscode-kubernetes.helm-path-windows": "C:\\Users\\Bahaa\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe"
+    },
+    "terminal.integrated.shellIntegration.suggestEnabled": true,
+    "remote.WSL.useShellEnvironment": false,
+    "terminal.integrated.cursorBlinking": true,
+    "workbench.settings.applyToAllProfiles": [],
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "debug.openDebug": "neverOpen",
+    "editor.tabCompletion": "on",
+    "powershell.integratedConsole.focusConsoleOnExecute": false,
+    "files.defaultLanguage": "powershell",
+    "editor.wordSeparators": "`~!@#%^&*()-=+[{]}\\|;:'\",.<>/?",
+    "powershell.buttons.showPanelMovementButtons": true,
+    "powershell.codeFolding.showLastLine": false,
+    "powershell.pester.codeLens": false,
+    "accessibility.signals.terminalBell": {
+        "sound": "on"
+    },
+    "terminal.integrated.cwd": "H:\\[AllProjects]\\DeepLearningLAB",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "terminal.integrated.enableVisualBell": true,
+    "rech.batch.alertConflictingExtensions": false,
+    "workbench.colorTheme": "PowerShell ISE",
+    "workbench.colorCustomizations": {
+        "terminal.foreground": "#b1eafc",
+        "terminal.background": "#17038b"
+    },
+    "workbench.panel.defaultLocation": "bottom",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "args": [
+                "-NoLogo"
+            ],
+            "startingDirectory": "${workspaceFolder}"
+        }
+    }
+}
