@@ -6,7 +6,6 @@ To change the name of a Docker container, you can use the --name option when run
 Steps to Name Your Docker Container
 Stop and Remove Any Running Container:
 
-
 If you have a container already running with the same name, stop and remove it first:
 
 ```
@@ -29,6 +28,8 @@ Running the Docker Container with a Custom Name:
 ```
 docker run -it --rm -p 8888:8888 --name opencvlab_container opencvlab
 ```
+
+![1721581083545](image/Howtochangethenameofthedockercontainer/1721581083545.png)
 
 Attaching to the Container in VSCode:
 

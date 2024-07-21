@@ -8,7 +8,7 @@ docker build -t opencvlab .
 Run Container Command:
 
 ```
-docker run -it --rm -p 8888:8888 opencvlab
+docker run -it --rm -p 8888:8888 --name opencvlab_container opencvlab
 ```
 
 Activate the Conda Environment:
