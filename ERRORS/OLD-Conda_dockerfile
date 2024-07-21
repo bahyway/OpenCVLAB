@@ -10,13 +10,8 @@ WORKDIR /app
 # Copy the environment.yml file into the container
 COPY environment.yml .
 
-# Print conda info for debugging
-RUN conda info
-RUN conda config --show-sources
-RUN conda list --show-channel-urls
-
-# Update conda
-RUN conda update -n base -c defaults conda --yes
+# Update conda and install dependencies
+RUN conda update -n base -c defaults conda
 
 # Create the environment with verbose output
 RUN conda env create -f environment.yml --verbose
