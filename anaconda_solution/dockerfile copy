@@ -1,0 +1,81 @@
+# Use a recent Miniconda image
+FROM continuumio/miniconda3:latest
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the environment.yml file into the container
+COPY environment.yml .
+
+# Print conda info for debugging
+RUN conda info
+RUN conda config --show-sources
+RUN conda list --show-channel-urls
+
+# Update conda
+RUN conda update -n base -c defaults conda --yes
+
+# Install system dependencies required for Python packages
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libssl-dev \
+    libffi-dev \
+    libbz2-dev \
+    libreadline-dev \
+    libsqlite3-dev \
+    wget \
+    curl \
+    llvm \
+    libncurses5-dev \
+    libncursesw5-dev \
+    xz-utils \
+    tk-dev \
+    liblzma-dev \
+    libxml2-dev \
+    libxmlsec1-dev \
+    libffi-dev \
+    libxslt1-dev \
+    zlib1g-dev \
+    gcc \
+    g++ \
+    make
+
+# Create the Conda environment with specified packages
+RUN conda env create -f environment.yml --verbose 2>&1 | tee /tmp/conda_env_create.log
+
+# Print the log file to see the details in case of failure
+RUN cat /tmp/conda_env_create.log
+
+# Activate the environment and ensure PATH is set correctly
+RUN echo "source activate opencvlab" > ~/.bashrc
+ENV PATH /opt/conda/envs/opencvlab/bin:$PATH
+
+# Copy the rest of the working directory contents into the container
+COPY . .
+
+# Install remaining dependencies via pip with detailed logging
+RUN pip install --no-cache-dir --verbose jupyter
+RUN pip install --no-cache-dir --verbose tensorflow
+RUN pip install --no-cache-dir --verbose keras
+RUN pip install --no-cache-dir --verbose torch
+RUN pip install --no-cache-dir --verbose torchvision
+RUN pip install --no-cache-dir --verbose h5py
+RUN pip install --no-cache-dir --verbose grpcio
+RUN pip install --no-cache-dir --verbose ipython
+RUN pip install --no-cache-dir --verbose jupyterlab
+RUN pip install --no-cache-dir --verbose markdown
+RUN pip install --no-cache-dir --verbose protobuf
+RUN pip install --no-cache-dir --verbose pygments
+RUN pip install --no-cache-dir --verbose werkzeug
+RUN pip install --no-cache-dir --verbose wheel
+RUN pip install --no-cache-dir --verbose pyyaml
+RUN pip install --no-cache-dir --verbose pyzmq
+
+# Expose the port for Jupyter Notebook
+EXPOSE 8888
+
+# Command to run Jupyter Notebook
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root"]
